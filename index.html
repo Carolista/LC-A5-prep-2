@@ -7,51 +7,65 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Photolocation</title>
+	<title>Trivia Time</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <!-- Google fonts linked here if you want -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src = "scripts.js"></script>
 </head>
 
 <body>
 	
 	<header id="header">
-		<h1 id="page-title">Photolocation</h1> 
-		<!-- work in Pexels logo here -->
+		<p id="page-title">Trivia Time</p> 
+		<p id="byline">questions courtesy of the <a id="opentdb-link" href="http://opentdb.com" target="_blank">Open Trivia Database</a></p> 	
 	</header>
 
 	<main> 
+
+		<!-- Inline Form -->
 		<section id="search-bar">
 			<form id="form">
-                <div class="input-item">
-                    <label>Search for: <input id="keyword" type="text" name="keyword" /></label>
+				<div class="container row">
+					<div class="input-item">
+						<label class="request">Questions <input id="num-questions" type="number" name="num-questions" /></label>
+					</div>
+					<div class="input-item">
+						<label class="request">Category 
+							<select id="category" name="category">
+								<option value="any"></option>
+								<!-- populate remainder using JS after fetching categories -->
+							</select>
+						</label>
+					</div>
+					<div class="input-item">
+						<label class="request">Type 
+							<select id="type" name="type">
+								<option value="any"></option>
+								<option value="multiple">Multiple Choice</option>
+								<option value="boolean">True or False</option>
+							</select>
+						</label>
+					</div>
+					<div class="input-item">
+						<label class="request">Difficulty 
+							<select id="difficulty" name="difficulty">
+								<option value="any"></option>
+								<option value="easy">Easy</option>
+								<option value="medium">Medium</option>
+								<option value="hard">Hard</option>
+							</select>
+						</label>
+					</div>
+					<button id="submit">Go</button>
 				</div>
-				<div class="input-item">
-                    <label>Results per page: <input id="results-per-page" type="text" name="results-per-page" /></label>
-				</div>
-				<div class="input-item">
-                    <label>View: 
-						<select id="view" type="text" name="view">
-							<option value="small">Small</option>
-							<option value="medium">Medium</option>
-							<option value="large">Large</option>
-						</select>
-					</label>
-                </div>
-                <button id="submit">Go</button>
             </form>
 		</section>
-		<section id="results-report">
-			<p>Your search returned <span id="total-results"></span> results.</p>
+
+		<!-- Results -->
+		<section id="question-area">
+			<!-- populate using JS after fetching questions -->
 		</section>
-		<section id="results-area">
-			<!-- All results should populate here from JSON fetch -->
-			<!-- Size and grid determined by user settings -->
-		</section>
-		<section id="page-nav">
-			<!-- Links for loading more results below -->
-		</section>
-    </main>
+	</main>
     
 </body>
 

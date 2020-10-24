@@ -1,0 +1,125 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which author and poet famously wrote the line, &quot;The female of the species is more deadly than the male&quot;?",
+            "correct_answer": "Rudyard Kipling",
+            "incorrect_answers": [
+                "Edgar Allan Poe",
+                "William Shakespeare",
+                "William Wordsworth"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In the Harry Potter universe, who does Draco Malfoy end up marrying?",
+            "correct_answer": "Astoria Greengrass",
+            "incorrect_answers": [
+                "Pansy Parkinson",
+                "Millicent Bulstrode",
+                "Hermione Granger"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Abel Magwitch is a character from which Charles Dickens novel?",
+            "correct_answer": "Great Expectations",
+            "incorrect_answers": [
+                "The Pickwick Papers",
+                "Nicholas Nickleby",
+                "Oliver Twist"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In the &quot;Harry Potter&quot; series, what is Headmaster Dumbledore&#039;s full name?",
+            "correct_answer": "Albus Percival Wulfric Brian Dumbledore",
+            "incorrect_answers": [
+                "Albus Valum Jetta Mobius Dumbledore",
+                "Albus James Lunae Otto Dumbledore",
+                "Albus Valencium Horatio Kul Dumbledore"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of the following is NOT a work done by Shakespeare?",
+            "correct_answer": "Trial of Temperance",
+            "incorrect_answers": [
+                "Measure For Measure",
+                "Titus Andronicus",
+                "Cymbeline"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In Margaret Atwood&#039;s &quot;The Handmaid&#039;s Tale&quot;, what is Offred&#039;s real name is implied to be?",
+            "correct_answer": "June",
+            "incorrect_answers": [
+                "August",
+                "April",
+                "May"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In the Magic: The Gathering universe,  the Antiquities, Ice Age, and Alliances expansions take place on which continent?",
+            "correct_answer": "Terisiare",
+            "incorrect_answers": [
+                "Aerona",
+                "Shiv",
+                "Jamuraa"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In which classic novel is there a character named Homer Simpson?",
+            "correct_answer": "The Day of the Locust",
+            "incorrect_answers": [
+                "Catch-22",
+                "Of Mice and Men",
+                "A Separate Peace"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which author co-wrote &quot;The Communist Manifesto&quot; alongside Karl Marx?",
+            "correct_answer": "Friedrich Engels",
+            "incorrect_answers": [
+                "Robert Owen",
+                "Alexander Kerensky",
+                "Paul Lafargue"
+            ]
+        },
+        {
+            "category": "Entertainment: Books",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which fictional English county was the setting for Thomas Hardy&#039;s novels?",
+            "correct_answer": "Wessex",
+            "incorrect_answers": [
+                "Barsetshire",
+                "Fulchester",
+                "Ambridge"
+            ]
+        }
+    ]
+}

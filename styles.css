@@ -8,7 +8,7 @@
 
 body {
 	background-color: white;
-	font-family: 'Arial', sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-size: 12pt;
 	font-weight: 400;
 	color: #222; 
@@ -21,9 +21,10 @@ body {
 }
 
 header {
-	background-color: #222;
-    height: 140px;
-    padding: 20px 120px;
+    color: white;
+	background-color: #05508d;
+    height: 120px;
+    padding: 20px 100px;
     box-sizing: border-box;
 }
 
@@ -32,7 +33,16 @@ main {
     flex-direction: column;
     justify-content: center;
 	width: 100%;
-    padding: 30px 120px;
+    padding: 30px 100px;
+    box-sizing: border-box;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 80px;
+    padding: 20px 100px;
     box-sizing: border-box;
 }
 
@@ -46,44 +56,26 @@ div {
 	padding: 0px;
 }
 
-h1 { 
-    /* Google font here if you want */
-	font-size: 2.5rem;
-}
-
-h2 { 
-	font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-h3 {
-    font-size: 2rem;
-    text-align: center;
-    margin: 0px; 
-}
-
 p {
     margin: .5rem 0px; 
 }
 
 button {
-    height: 2.3rem;
-    width: 120px;
+    height: 1.3rem;
+    width: 50px;
     padding: 3px;
     color: white;
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    background-color: #222;
+    background-color: #05508d;
     border: none;
-    border-radius: 5px;
-    margin: 10px;
+    border-radius: 3px;
+    margin: 6px 0px 0px;
 }
 
 button:hover {
     cursor: pointer;
-    opacity: 0.80;
+    background-color: #013a68;
 }
 
 button:focus {
@@ -94,28 +86,82 @@ button:focus {
 /**** IDs for specific elements ****/
 
 #page-title {
-	color: white;
-	text-align: center;
-	margin: 0px 0px 10px;  
-}
-
-#tagline {
-    color: white;
-	text-align: center;
+	font-family: "Bungee Shade", "Roboto", sans-serif;
+	font-size: 2.5rem;
 	margin: 0px;  
 }
 
-#box {
-    display: flex;
-    border: 2px solid #222;
-    height: 100px;
-    width: 360px;
-    justify-content: center;
-    align-items: center;
+#byline {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+#opentdb-link {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#opentdb-link.hover {
+    color: #ffda35;
+}
+
+#opentdb-link.visited {
+    color: white;
+}
+
+#num-questions {
+    width: 40px;
 }
 
 
 /**** Classes for custom styles ****/
+
+.score {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    visibility: hidden;
+}
+
+.input-item {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 20px 5px 0px;
+}
+
+label.request {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.q-container {
+    margin: 0px 0px 30px;
+}
+
+.q-number {
+    font-family: "Bungee Shade", "Roboto", sans-serif;
+    font-size: 2rem;
+    color: #05508d;
+    margin: 0px 0px 12px;
+}
+
+.q-question {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.q-option {
+    margin-right: 10px;
+}
+
+.q-info {
+    font-weight: 300;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin: 14px 0px 0px;
+}
 
 .container {
     display: flex;
@@ -127,13 +173,5 @@ button:focus {
 
 .column {
     flex-direction: column;
-}
-
-.hcenter {
-    justify-content: center; /* applies to flexbox only */
-}
-
-.vcenter {
-    align-items: center; /* applies to flexbox only */
 }
 

@@ -1,0 +1,154 @@
+{
+    "overall": {
+        "total_num_of_questions": 11064,
+        "total_num_of_pending_questions": 4135,
+        "total_num_of_verified_questions": 4025,
+        "total_num_of_rejected_questions": 2917
+    },
+    "categories": {
+        "9": {
+            "total_num_of_questions": 2103,
+            "total_num_of_pending_questions": 917,
+            "total_num_of_verified_questions": 299,
+            "total_num_of_rejected_questions": 890
+        },
+        "10": {
+            "total_num_of_questions": 245,
+            "total_num_of_pending_questions": 99,
+            "total_num_of_verified_questions": 92,
+            "total_num_of_rejected_questions": 54
+        },
+        "11": {
+            "total_num_of_questions": 524,
+            "total_num_of_pending_questions": 198,
+            "total_num_of_verified_questions": 240,
+            "total_num_of_rejected_questions": 86
+        },
+        "12": {
+            "total_num_of_questions": 721,
+            "total_num_of_pending_questions": 225,
+            "total_num_of_verified_questions": 362,
+            "total_num_of_rejected_questions": 135
+        },
+        "13": {
+            "total_num_of_questions": 80,
+            "total_num_of_pending_questions": 32,
+            "total_num_of_verified_questions": 31,
+            "total_num_of_rejected_questions": 17
+        },
+        "14": {
+            "total_num_of_questions": 365,
+            "total_num_of_pending_questions": 112,
+            "total_num_of_verified_questions": 167,
+            "total_num_of_rejected_questions": 86
+        },
+        "15": {
+            "total_num_of_questions": 2542,
+            "total_num_of_pending_questions": 975,
+            "total_num_of_verified_questions": 931,
+            "total_num_of_rejected_questions": 638
+        },
+        "16": {
+            "total_num_of_questions": 143,
+            "total_num_of_pending_questions": 52,
+            "total_num_of_verified_questions": 59,
+            "total_num_of_rejected_questions": 32
+        },
+        "17": {
+            "total_num_of_questions": 518,
+            "total_num_of_pending_questions": 202,
+            "total_num_of_verified_questions": 229,
+            "total_num_of_rejected_questions": 88
+        },
+        "18": {
+            "total_num_of_questions": 420,
+            "total_num_of_pending_questions": 151,
+            "total_num_of_verified_questions": 159,
+            "total_num_of_rejected_questions": 110
+        },
+        "19": {
+            "total_num_of_questions": 221,
+            "total_num_of_pending_questions": 69,
+            "total_num_of_verified_questions": 54,
+            "total_num_of_rejected_questions": 101
+        },
+        "20": {
+            "total_num_of_questions": 106,
+            "total_num_of_pending_questions": 36,
+            "total_num_of_verified_questions": 57,
+            "total_num_of_rejected_questions": 13
+        },
+        "21": {
+            "total_num_of_questions": 403,
+            "total_num_of_pending_questions": 195,
+            "total_num_of_verified_questions": 129,
+            "total_num_of_rejected_questions": 79
+        },
+        "22": {
+            "total_num_of_questions": 521,
+            "total_num_of_pending_questions": 153,
+            "total_num_of_verified_questions": 274,
+            "total_num_of_rejected_questions": 95
+        },
+        "23": {
+            "total_num_of_questions": 639,
+            "total_num_of_pending_questions": 206,
+            "total_num_of_verified_questions": 306,
+            "total_num_of_rejected_questions": 127
+        },
+        "24": {
+            "total_num_of_questions": 163,
+            "total_num_of_pending_questions": 60,
+            "total_num_of_verified_questions": 58,
+            "total_num_of_rejected_questions": 45
+        },
+        "25": {
+            "total_num_of_questions": 80,
+            "total_num_of_pending_questions": 32,
+            "total_num_of_verified_questions": 29,
+            "total_num_of_rejected_questions": 19
+        },
+        "26": {
+            "total_num_of_questions": 121,
+            "total_num_of_pending_questions": 30,
+            "total_num_of_verified_questions": 53,
+            "total_num_of_rejected_questions": 39
+        },
+        "27": {
+            "total_num_of_questions": 153,
+            "total_num_of_pending_questions": 49,
+            "total_num_of_verified_questions": 74,
+            "total_num_of_rejected_questions": 30
+        },
+        "28": {
+            "total_num_of_questions": 165,
+            "total_num_of_pending_questions": 62,
+            "total_num_of_verified_questions": 71,
+            "total_num_of_rejected_questions": 32
+        },
+        "29": {
+            "total_num_of_questions": 114,
+            "total_num_of_pending_questions": 43,
+            "total_num_of_verified_questions": 55,
+            "total_num_of_rejected_questions": 16
+        },
+        "30": {
+            "total_num_of_questions": 44,
+            "total_num_of_pending_questions": 11,
+            "total_num_of_verified_questions": 24,
+            "total_num_of_rejected_questions": 9
+        },
+        "31": {
+            "total_num_of_questions": 497,
+            "total_num_of_pending_questions": 162,
+            "total_num_of_verified_questions": 185,
+            "total_num_of_rejected_questions": 151
+        },
+        "32": {
+            "total_num_of_questions": 176,
+            "total_num_of_pending_questions": 64,
+            "total_num_of_verified_questions": 87,
+            "total_num_of_rejected_questions": 25
+        }
+    }
+}
