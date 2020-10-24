@@ -1,0 +1,139 @@
+/**** CASCADING STYLE SHEET ****/
+
+/*
+    This sheet does not need to be edited unless you want to.
+*/
+
+/**** Defaults for standard elements ****/
+
+body {
+	background-color: white;
+	font-family: 'Arial', sans-serif;
+	font-size: 12pt;
+	font-weight: 400;
+	color: #222; 
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+    overflow-x: hidden; 
+    box-sizing: border-box;
+}
+
+header {
+	background-color: #222;
+    height: 140px;
+    padding: 20px 120px;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	width: 100%;
+    padding: 30px 120px;
+    box-sizing: border-box;
+}
+
+section {
+    margin: 0px 0px 30px;
+}
+
+div {
+    position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 { 
+    /* Google font here if you want */
+	font-size: 2.5rem;
+}
+
+h2 { 
+	font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0px; 
+}
+
+p {
+    margin: .5rem 0px; 
+}
+
+button {
+    height: 2.3rem;
+    width: 120px;
+    padding: 3px;
+    color: white;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    background-color: #222;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.80;
+}
+
+button:focus {
+    outline: 0;
+}
+
+
+/**** IDs for specific elements ****/
+
+#page-title {
+	color: white;
+	text-align: center;
+	margin: 0px 0px 10px;  
+}
+
+#tagline {
+    color: white;
+	text-align: center;
+	margin: 0px;  
+}
+
+#box {
+    display: flex;
+    border: 2px solid #222;
+    height: 100px;
+    width: 360px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/**** Classes for custom styles ****/
+
+.container {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.hcenter {
+    justify-content: center; /* applies to flexbox only */
+}
+
+.vcenter {
+    align-items: center; /* applies to flexbox only */
+}
+

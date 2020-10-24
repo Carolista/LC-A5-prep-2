@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<!-- This file does not need to be edited -->
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Photolocation</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Google fonts linked here if you want -->
+    <script src = "scripts.js"></script>
+</head>
+
+<body>
+	
+	<header id="header">
+		<h1 id="page-title">Photolocation</h1> 
+		<!-- work in Pexels logo here -->
+	</header>
+
+	<main> 
+		<section id="search-bar">
+			<form id="form">
+                <div class="input-item">
+                    <label>Search for: <input id="keyword" type="text" name="keyword" /></label>
+				</div>
+				<div class="input-item">
+                    <label>Results per page: <input id="results-per-page" type="text" name="results-per-page" /></label>
+				</div>
+				<div class="input-item">
+                    <label>View: 
+						<select id="view" type="text" name="view">
+							<option value="small">Small</option>
+							<option value="medium">Medium</option>
+							<option value="large">Large</option>
+						</select>
+					</label>
+                </div>
+                <button id="submit">Go</button>
+            </form>
+		</section>
+		<section id="results-report">
+			<p>Your search returned <span id="total-results"></span> results.</p>
+		</section>
+		<section id="results-area">
+			<!-- All results should populate here from JSON fetch -->
+			<!-- Size and grid determined by user settings -->
+		</section>
+		<section id="page-nav">
+			<!-- Links for loading more results below -->
+		</section>
+    </main>
+    
+</body>
+
+</html>
