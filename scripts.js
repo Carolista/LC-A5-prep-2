@@ -37,6 +37,8 @@ function fetchCategories() {
         response.json().then( function(json) {
             categories = json.trivia_categories;
             console.log("Categories loaded.");
+            // TODO: Call function to list categories on page
+            console.log("Categories displayed in drop-down menu on page.");
             init(); // This MUST go here so that nothing else on the page happens until the categories drop-down has the data it needs to populate the options!
         });
     });
@@ -52,124 +54,35 @@ window.addEventListener("load", function() {
 // DOM code for page elements
 function init() {
 
-    let questions = [];
+    // TODO: Establish variable to hold questions after they are returned from fetch request
+    
 
-    // Establish variables for DOM objects representing HTML elements
-    let numQuestions = document.getElementById("num-questions");
-    let category = document.getElementById("category");
-    let type = document.getElementById("type");
-    let difficulty = document.getElementById("difficulty");
-    let form = document.getElementById("form");
-    let questionArea = document.getElementById("question-area");
+    // TODO: Establish variables for DOM objects representing HTML elements
+    
 
-    // Write a function to populate the drop-down list of categories
-    function listCategories() {
-        // console.log(categories);
-        for (let i=0; i < categories.length; i++) {
-            // console.log("adding option for " + categories[i].id + categories[i].name);
-            category.innerHTML += `
-                <option value="${categories[i].id}">${categories[i].name}</option>
-            `
-        }
-    }
-    listCategories();
+    // TODO: Write a function to populate the drop-down list of categories
+    
 
-    // Write a function to build the URL with query parameters based on form submitted
-    function buildURL() {
-        let newURL = "https://opentdb.com/api.php?token=" + currentToken + "&amount=" + numQuestions.value + "&type=multiple";
-        if (category.value != "any") {
-            newURL += "&category=" + category.value;
-        }
-        if (type.value != "any") {
-            newURL += "&type=" + type.value;
-        }
-        if (difficulty.value != "any") {
-            newURL += "&difficulty=" + difficulty.value;
-        }
-        return newURL;
-    }
+    // TODO: Write a function to build the URL with query parameters based on form submitted
+    
 
-    // Write a function to fetch new questions from trivia database
-    function getQuestions() {
-        let url = buildURL();
-        fetch(url).then( function(response) {
-            response.json().then( function(json) {
-                questions = json.results;
-                console.log("New questions received.");
-                displayQuestions();
-                console.log("New questions displayed on page.");
-            });
-        });
-    }
+    // TODO: Write a function to fetch new questions from trivia database
+    
 
-    // Write a function to randomize correct and incorrect answers in an array for one question and return innerHTML
-    function getAnswerOptions(qIndex) {
-        let answers = [questions[qIndex].correct_answer].concat(questions[qIndex].incorrect_answers);
-        shuffle(answers);
-        let options = ""
-        for (let i=0; i < answers.length; i++) {
-            options += `
-            <input id="q${qIndex}-${i}" class="answer" name="q${qIndex}" type="radio" value="${answers[i]}" />
-            <label for="q${qIndex}-${i}" class="q-option">${answers[i]}</label>
-            `
-        }
-        return options;
-    }
+    // TODO: Write a function to shuffle correct and incorrect answers in an array for one question and return innerHTML
+    
 
-    // Write a function to display the questions
-    function displayQuestions() {
-        for (let i=0; i < questions.length; i++) {
-            let answers = getAnswerOptions(i);
-            questionArea.innerHTML += `
-            <div class="q-container">
-                <p class="q-number">Question ${i+1} <span id="score${i}" class="score"></span></p>
-                <p class="q-question">${questions[i].question}</p>
-                    ${answers}
-                <p class="q-info">${questions[i].category} &nbsp;&bull;&nbsp; ${questions[i].difficulty}</p>
-            </div>
-            `
-        }
-    }
+    // TODO: Write a function to display the questions
+    
 
-    // Write a function to reset the question area
-    function clearQuestions() {
-        questionArea.innerHTML = ""; // the display on the page
-        questions = []; // the array itself
-    }
+    // TODO: Write a function to reset the question area
+    
 
-    // Write a form-level listener for submission
-    form.addEventListener("submit", function(event) {
+    // TODO: Write a form-level listener for submission
+    
 
-        // Validate number of questions - must be 1-50
-        if (numQuestions.value > 50 || numQuestions.value < 1) {
-            console.log("User did not enter a valid number of questions.");
-            alert("Oops! Please check that you have entered a valid numbers (1-50) for the number of questions you would like returned.");
-            event.preventDefault();
-        } else {
-            clearQuestions();
-            getQuestions(); 
-        }
-        // Keep page from reloading and token from resetting when form is submitted
-        event.preventDefault();
-
-    });
-
-    // Write a document-level listener with an anonymous function to score a question
-    document.addEventListener("click", function(event) {
-        if (event.target.matches(".answer")) {
-            let qIndex = event.target.id[1];
-            // let label = document.querySelector('label[for=" + event.target.id + "]');
-            let score = document.getElementById("score" + qIndex);
-            score.style.visibility = "visible";
-            if (event.target.value === questions[qIndex].correct_answer) {
-                score.style.color = "green";
-                score.innerHTML = "Correct!";
-            } else {
-                score.style.color = "red";
-                score.innerHTML = "Nope. Try again.";
-            }
-        }
-    });
+    // TODO: Write a document-level listener with an anonymous function to score a question
+    
 
 
     /** Helper Function(s) **/
