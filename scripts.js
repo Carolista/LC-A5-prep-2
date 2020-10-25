@@ -46,7 +46,8 @@ function fetchCategories() {
 window.addEventListener("load", function() {
     fetchToken();
     fetchCategories();
-    console.log('Page loaded. (Is it really though?)'); // Note what order these get logged in the JS console
+    console.log('Page loaded. (Is it really though?)'); // Note what order these get logged in the JS console - promises!
+    alert("Disclaimer: Some correct answers will not register as correct in spite of default encoding of special characters from API"); // FIXME: see if there is a way around this
 });
 
 // DOM code for page elements
@@ -73,7 +74,8 @@ function init() {
     }
 
     // Call function to populate category drop-down in form
-    listCategories();
+    listCategories(); 
+    // Notice when you first load the page this sometimes takes a second, because init() was waiting for the JSON to come back in fetchCategories()
 
     // Write a function to build the URL with query parameters based on form submitted
     function buildURL() {
