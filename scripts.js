@@ -15,13 +15,13 @@
  * To request token: https://opentdb.com/api_token.php?command=request
  * To use token: https://opentdb.com/api.php?amount=10&token=YOURTOKENHERE
  * 
+ * TO FETCH JSON FROM THE API: https://opentdb.com/api.php (plus whatever query parameters the user adds)
  */
-
 
 let currentToken; 
 let categories = [];
 
-// Fetch token for 6 hours of tracking to prevent duplicated questions from trivia database
+// Fetch token to prevent duplicated questions from trivia database
 // Using preventDefault() on the form listener will keep this from resetting when form is submitted
 function fetchToken() {
     fetch("https://opentdb.com/api_token.php?command=request").then( function(response) {
@@ -52,8 +52,9 @@ window.addEventListener("load", function() {
 // DOM code for page elements
 function init() {
 
+    // Establish variable to hold questions after they are returned from fetch request
     let questions = [];
-
+    
     // Establish variables for DOM objects representing HTML elements
     let numQuestions = document.getElementById("num-questions");
     let category = document.getElementById("category");
@@ -64,26 +65,26 @@ function init() {
 
     // Write a function to populate the drop-down list of categories
     function listCategories() {
-        // console.log(categories);
         for (let i=0; i < categories.length; i++) {
-            // console.log("adding option for " + categories[i].id + categories[i].name);
             category.innerHTML += `
                 <option value="${categories[i].id}">${categories[i].name}</option>
             `
         }
     }
+
+    // Call function to populate category drop-down in form
     listCategories();
 
     // Write a function to build the URL with query parameters based on form submitted
     function buildURL() {
-        let newURL = "https://opentdb.com/api.php?token=" + currentToken + "&amount=" + numQuestions.value + "&type=multiple";
-        if (category.value != "any") {
+        let newURL = "https://opentdb.com/api.php?token=" + currentToken + "&amount=" + numQuestions.value;
+        if (category.value !== "any") {
             newURL += "&category=" + category.value;
         }
-        if (type.value != "any") {
+        if (type.value !== "any") {
             newURL += "&type=" + type.value;
         }
-        if (difficulty.value != "any") {
+        if (difficulty.value !== "any") {
             newURL += "&difficulty=" + difficulty.value;
         }
         return newURL;
@@ -91,22 +92,22 @@ function init() {
 
     // Write a function to fetch new questions from trivia database
     function getQuestions() {
-        let url = buildURL();
+        let url = buildURL(); 
         fetch(url).then( function(response) {
-            response.json().then( function(json) {
-                questions = json.results;
-                console.log("New questions received.");
-                displayQuestions();
-                console.log("New questions displayed on page.");
-            });
+        response.json().then( function(json) {
+            questions = json.results;
+            console.log("New questions received.");
+            displayQuestions();
+            console.log("New questions displayed on page.");
         });
+    });
     }
 
-    // Write a function to randomize correct and incorrect answers in an array for one question and return innerHTML
+    // Write a function to shuffle correct and incorrect answers in an array for one question and return innerHTML
     function getAnswerOptions(qIndex) {
         let answers = [questions[qIndex].correct_answer].concat(questions[qIndex].incorrect_answers);
         shuffle(answers);
-        let options = ""
+        let options = "";
         for (let i=0; i < answers.length; i++) {
             options += `
             <input id="q${qIndex}-${i}" class="answer" name="q${qIndex}" type="radio" value="${answers[i]}" />
@@ -118,47 +119,60 @@ function init() {
 
     // Write a function to display the questions
     function displayQuestions() {
+        let answers;
         for (let i=0; i < questions.length; i++) {
-            let answers = getAnswerOptions(i);
+            answers = getAnswerOptions(i);
             questionArea.innerHTML += `
-            <div class="q-container">
-                <p class="q-number">Question ${i+1} <span id="score${i}" class="score"></span></p>
-                <p class="q-question">${questions[i].question}</p>
-                    ${answers}
-                <p class="q-info">${questions[i].category} &nbsp;&bull;&nbsp; ${questions[i].difficulty}</p>
-            </div>
+                <div class="q-container">
+                    <p class="q-number">Question ${i+1} <span id="score${i}" class="score">Score goes here!</span></p>
+                    <p class="q-question">${questions[i].question}</p>
+                        ${answers}
+                    <p class="q-info">${questions[i].category} &nbsp;&bull;&nbsp; ${questions[i].difficulty}</p>
+                </div>
             `
         }
     }
 
     // Write a function to reset the question area
     function clearQuestions() {
-        questionArea.innerHTML = ""; // the display on the page
-        questions = []; // the array itself
+        questionArea.innerHTML = ""; // the display the page
+        questions = []; // the array itself;
     }
 
     // Write a form-level listener for submission
     form.addEventListener("submit", function(event) {
 
-        // Validate number of questions - must be 1-50
+        let validNumber = true;
+        let validCategory = true;
+
+        // Do not allow form submission if number is not in range of 1-50 (required by API)
         if (numQuestions.value > 50 || numQuestions.value < 1) {
             console.log("User did not enter a valid number of questions.");
             alert("Oops! Please check that you have entered a valid numbers (1-50) for the number of questions you would like returned.");
+            validNumber = false;
             event.preventDefault();
-        } else {
-            clearQuestions();
-            getQuestions(); 
+        } 
+
+        // Do not allow form submission if category is not specified (required just for demonstration purposes)
+        if (category.value === "any") {
+            console.log("User did not enter a category.");
+            alert("Oops! Please select a category.");
+            validCategory = false;
+            event.preventDefault();
         }
-        // Keep page from reloading and token from resetting when form is submitted
+    
+        if (validNumber && validCategory) {
+            clearQuestions();
+            getQuestions();
+        }
         event.preventDefault();
-
     });
-
+    
     // Write a document-level listener with an anonymous function to score a question
     document.addEventListener("click", function(event) {
         if (event.target.matches(".answer")) {
-            let qIndex = event.target.id[1];
-            // let label = document.querySelector('label[for=" + event.target.id + "]');
+            let answerId = event.target.id;
+            let qIndex = answerId.slice(1, answerId.indexOf("-")); // grab question index from answer id
             let score = document.getElementById("score" + qIndex);
             score.style.visibility = "visible";
             if (event.target.value === questions[qIndex].correct_answer) {
@@ -170,7 +184,6 @@ function init() {
             }
         }
     });
-
 
     /** Helper Function(s) **/
 
