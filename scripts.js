@@ -37,7 +37,6 @@ function fetchCategories() {
         response.json().then( function(json) {
             categories = json.trivia_categories;
             console.log("Categories loaded.");
-            // TODO: Call function to list categories on page
             console.log("Categories displayed in drop-down menu on page.");
             init(); // This MUST go here so that nothing else on the page happens until the categories drop-down has the data it needs to populate the options!
         });
@@ -72,7 +71,7 @@ function init() {
     // TODO: Write a function to shuffle correct and incorrect answers in an array for one question and return innerHTML
     
 
-    // TODO: Write a function to display the questions
+    // TODO: Write a function to display the questions (see sample-question-code.html)
     
 
     // TODO: Write a function to reset the question area
