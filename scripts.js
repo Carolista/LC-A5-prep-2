@@ -36,8 +36,6 @@ function fetchCategories() {
     fetch("https://opentdb.com/api_category.php").then( function(response) {
         response.json().then( function(json) {
             categories = json.trivia_categories;
-            console.log("Categories loaded.");
-            console.log("Categories displayed in drop-down menu on page.");
             init(); // This MUST go here so that nothing else on the page happens until the categories drop-down has the data it needs to populate the options!
         });
     });
@@ -47,7 +45,7 @@ function fetchCategories() {
 window.addEventListener("load", function() {
     fetchToken();
     fetchCategories();
-    console.log('Page loaded. (Is it really though?)'); // Note what order these get logged in the JS console
+
 });
 
 // DOM code for page elements
@@ -57,12 +55,12 @@ function init() {
     let questions = [];
 
     // TODO: Establish variables for DOM objects representing HTML elements
+    const numQuestions = document.getElementById("num-questions");
     const category = document.getElementById("category");
-    const questionArea = document.getElementById("question-area");
-    const numQuestions = document.getElementById("num-questions")
-    const submitButton = document.getElementById("submit");
     const type = document.getElementById("type");
     const difficulty = document.getElementById("difficulty");
+    const submitButton = document.getElementById("submit");
+    const questionArea = document.getElementById("question-area");
 
     // TODO: Write a function to populate the drop-down list of categories
     function populateDropdown() {
@@ -104,7 +102,8 @@ function init() {
 
     // TODO: Write a function to shuffle correct and incorrect answers in an array for one question and return innerHTML
     function shuffleMultipleChoice(crtAns, incAns) {
-        let allChoices = incAns;
+        let allChoices = structuredClone(incAns);
+        allChoices.push(crtAns);
         let currentIndex = allChoices.length;
         let randomIndex = 0;
         while (currentIndex != 0) {
