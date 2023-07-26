@@ -62,7 +62,7 @@ p {
 
 button {
     height: 1.3rem;
-    width: 50px;
+    width: justify;
     padding: 3px;
     color: white;
     font-size: 0.9rem;

@@ -70,12 +70,6 @@ function init() {
     };
     populateDropdown();
 
-    submitButton.addEventListener("click", function(event) {
-        resetQuestionArea();
-        buildUrl();
-        event.preventDefault();
-    })
-
     // TODO: Write a function to build the URL with query parameters based on form submitted
     function buildUrl() {
         let fullUrl = "https://opentdb.com/api.php?amount="
@@ -144,10 +138,30 @@ function init() {
    } 
 
     // TODO: Write a form-level listener for submission
-    
+
+    submitButton.addEventListener("click", function(event) {
+        resetQuestionArea();
+        buildUrl();
+        event.preventDefault();
+    });
 
     // TODO: Write a document-level listener with an anonymous function to score a question
-    
+    document.addEventListener("click", function(event) {
+        if (event.target.matches(".q-option")) {
+
+            let qIndex = event.target.id[1];
+            
+            let score = document.getElementById("score" + qIndex);
+            if (event.target.value === questions[qIndex].correct_answer) {
+                score.style.color = "green";
+                score.innerHTML = "Correct!";
+            } else {
+                score.style.color = "red";
+                score.innerHTML = "Incorrect. Try again.";
+            }
+
+        };
+    });
 
 
     /** Helper Function(s) **/
