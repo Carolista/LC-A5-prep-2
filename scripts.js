@@ -20,7 +20,6 @@
 
 let currentToken; 
 let categories = [];
-let questions = [];
 
 // Fetch token for 6 hours of tracking to prevent duplicated questions from trivia database
 // Using preventDefault() on the form listener will keep this from resetting when form is submitted
@@ -74,14 +73,13 @@ function init() {
     populateDropdown();
 
     submitButton.addEventListener("click", function(event) {
-        fullUrl = "https://opentdb.com/api.php?amount="
         buildUrl();
         event.preventDefault();
     })
 
     // TODO: Write a function to build the URL with query parameters based on form submitted
     function buildUrl() {
-        let baseUrl = "https://opentdb.com/api.php?amount=";
+        let fullUrl = "https://opentdb.com/api.php?amount="
             fullUrl += numQuestions.value;
         if (category.value !== "any") {
             fullUrl += "&category=" + category.value;
@@ -90,40 +88,56 @@ function init() {
         if (difficulty.value !== "any") {
             fullUrl += "&difficulty=" + difficulty.value;
         }
+        fetchQuestions(fullUrl);
     }
 
     // TODO: Write a function to fetch new questions from trivia database
-    function fetchQuestions() {
-        fetch(fullUrl).then(function(response){
+    function fetchQuestions(url) {
+        fetch(url).then(function(response){
             response.json().then(function(json){
                 questions = json.results
             });
         });
+        displayQuestions();
     };
     
 
     // TODO: Write a function to shuffle correct and incorrect answers in an array for one question and return innerHTML
+    function shuffleMultipleChoice(crtAns, incAns) {
+        let allChoices = incAns;
+        let currentIndex = allChoices.length;
+        let randomIndex = 0;
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex)
+            currentIndex--;
+            [allChoices[currentIndex], allChoices[randomIndex]] = [allChoices[randomIndex], allChoices[currentIndex]];
+        }
+        return allChoices;
+    }
     
 
     // TODO: Write a function to display the questions (see sample-question-code.html)
     function displayQuestions() {
         for (i=0;i<questions.length;i++) {
+            let choices = shuffleMultipleChoice(questions[i].correct_answer, questions[i].incorrect_answers);
+            console.log(choices);
             questionArea.innerHTML += `
             <div class="q-container">
             <p class="q-number">Question ${i+1}<span id="score0" class="score"></span></p>
             <p class="q-question">${questions[i].question}</p>
-                <input id="q0-0" class="answer" name="q0" type="radio" value="Blue" />
-                <label for="q0-0" class="q-option">Blue</label>
-                <input id="q0-1" class="answer" name="q0" type="radio" value="Blue" />
-                <label for="q0-1" class="q-option">Burnt Sienna</label>
-                <input id="q0-2" class="answer" name="q0" type="radio" value="Blue" />
-                <label for="q0-2" class="q-option">Crimson</label>
-                <input id="q0-3" class="answer" name="q0" type="radio" value="Blue" />
-                <label for="q0-3" class="q-option">Chartreuse</label>
-            <p class="q-info">General Knowledge &nbsp;&bull;&nbsp; Easy</p>
+                <input id="q0-0" class="answer" name="q${i+1}" type="radio" value="${questions[i].correct_answer}" />
+                <label for="q0-0" class="q-option">${choices[0]}</label>
+                <input id="q0-1" class="answer" name="q${i+1}" type="radio" value="${questions[i].correct_answer}" />
+                <label for="q0-1" class="q-option">${choices[1]}</label>
+                <input id="q0-2" class="answer" name="q${i+1}" type="radio" value="${questions[i].correct_answer}" />
+                <label for="q0-2" class="q-option">${choices[2]}</label>
+                <input id="q0-3" class="answer" name="q${i+1}" type="radio" value="${questions[i].correct_answer}" />
+                <label for="q0-3" class="q-option">${choices[3]}</label>
+            <p class="q-info">${questions[i].category} &nbsp;&bull;&nbsp; ${questions[i].difficulty}</p>
         </div>`
         }
     }
+  
 
     // TODO: Write a function to reset the question area
     

@@ -2,56 +2,96 @@
   "response_code": 0,
   "results": [
     {
-      "category": "Science & Nature",
-      "type": "multiple",
-      "difficulty": "easy",
-      "question": "What is the largest animal currently on Earth?",
-      "correct_answer": "Blue Whale",
-      "incorrect_answers": ["Orca", "Colossal Squid", "Giraffe"]
-    },
-    {
       "category": "General Knowledge",
       "type": "multiple",
       "difficulty": "easy",
-      "question": "How many colors are there in a rainbow?",
-      "correct_answer": "7",
-      "incorrect_answers": ["8", "9", "10"]
+      "question": "What word represents the letter &#039;T&#039; in the NATO phonetic alphabet?",
+      "correct_answer": "Tango",
+      "incorrect_answers": ["Target", "Taxi", "Turkey"]
     },
     {
-      "category": "Entertainment: Music",
+      "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "easy",
-      "question": "Which band released songs suchs as &quot;Rio&quot;, &quot;Girls on Film&quot;, and &quot;The Reflex&quot;?",
-      "correct_answer": "Duran Duran",
-      "incorrect_answers": ["The Cure", "New Order", "Depeche Mode"]
+      "question": "What was the first video game in the Batman &quot;Arkham&quot; series?",
+      "correct_answer": "Arkham Asylum",
+      "incorrect_answers": ["Arkham Knight", "Arkham City", "Arkham Origins"]
     },
     {
-      "category": "Science: Computers",
+      "category": "Geography",
       "type": "multiple",
-      "difficulty": "easy",
-      "question": "What does LTS stand for in the software market?",
-      "correct_answer": "Long Term Support",
+      "difficulty": "hard",
+      "question": "What is the name of one of the Neo-Aramaic languages spoken by the Jewish population from Northwestern Iraq?",
+      "correct_answer": "Lishana Deni",
       "incorrect_answers": [
-        "Long Taco Service",
-        "Ludicrous Transfer Speed",
-        "Ludicrous Turbo Speed"
+        "Hulaul&aacute;",
+        "Lishan Didan",
+        "Chaldean Neo-Aramaic"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Adolf Hitler was born on which date?",
+      "correct_answer": "April 20, 1889",
+      "incorrect_answers": [
+        "June 12, 1889",
+        "February 6, 1889",
+        "April 16, 1889"
       ]
     },
     {
       "category": "Geography",
       "type": "multiple",
-      "difficulty": "easy",
-      "question": "What is the Polish city known to Germans as Danzig?",
-      "correct_answer": "Gda\u0144sk",
-      "incorrect_answers": ["Warsaw", "Zakopane", "Pozna\u0144"]
+      "difficulty": "medium",
+      "question": "What tiny principality lies between Spain and France?",
+      "correct_answer": "Andorra",
+      "incorrect_answers": ["Liechtenstein", "Monaco", "San Marino"]
     },
     {
-      "category": "Entertainment: Books",
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What musician made the song &quot;Fuckin` Perfect&quot; in 2010?",
+      "correct_answer": "P!nk",
+      "incorrect_answers": ["Mitis", "Adam lambert", "Koven"]
+    },
+    {
+      "category": "Science & Nature",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What does the term &quot;isolation&quot; refer to in microbiology?",
+      "correct_answer": "The separation of a strain from a natural, mixed population of living microbes",
+      "incorrect_answers": [
+        "A lack of nutrition in microenviroments",
+        "The nitrogen level in soil",
+        "Testing effects of certain microorganisms in an isolated enviroments, such as caves"
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Who is the main protagonist of &quot;Ace Combat Zero: The Belkan War&quot;?",
+      "correct_answer": "Cipher",
+      "incorrect_answers": ["Mobius 1", "Blaze", "Pixy"]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the smallest number that can be expressed as the sum of two positive cubes in two different ways?",
+      "correct_answer": "1729",
+      "incorrect_answers": ["91", "561", "4104"]
+    },
+    {
+      "category": "Art",
       "type": "multiple",
       "difficulty": "easy",
-      "question": "What was the first ever entry written for the SCP Foundation collaborative writing project?",
-      "correct_answer": "SCP-173",
-      "incorrect_answers": ["SCP-001", "SCP-999", "SCP-1459"]
+      "question": "Who painted the biblical fresco The Creation of Adam?",
+      "correct_answer": "Michelangelo",
+      "incorrect_answers": ["Leonardo da Vinci", "Caravaggio", "Rembrandt"]
     }
   ]
 }
