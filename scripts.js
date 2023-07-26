@@ -54,13 +54,18 @@ window.addEventListener("load", function() {
 function init() {
 
     // TODO: Establish variable to hold questions after they are returned from fetch request
-    
+    let questions = [];
 
     // TODO: Establish variables for DOM objects representing HTML elements
-    
+    const category = document.getElementById("category");
+    const questionArea = document.getElementById("question-area");
 
     // TODO: Write a function to populate the drop-down list of categories
-    
+    function populateDropdown() {
+        for (i=0;i<categories.length;i++) {
+            category.innerHTML += <option value="${category[i].id}">${category[i].name}</option>
+        }
+    };
 
     // TODO: Write a function to build the URL with query parameters based on form submitted
     
