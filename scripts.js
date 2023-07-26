@@ -20,6 +20,7 @@
 
 let currentToken; 
 let categories = [];
+let questions = [];
 
 // Fetch token for 6 hours of tracking to prevent duplicated questions from trivia database
 // Using preventDefault() on the form listener will keep this from resetting when form is submitted
@@ -59,25 +60,70 @@ function init() {
     // TODO: Establish variables for DOM objects representing HTML elements
     const category = document.getElementById("category");
     const questionArea = document.getElementById("question-area");
+    const numQuestions = document.getElementById("num-questions")
+    const submitButton = document.getElementById("submit");
+    const type = document.getElementById("type");
+    const difficulty = document.getElementById("difficulty");
 
     // TODO: Write a function to populate the drop-down list of categories
     function populateDropdown() {
         for (i=0;i<categories.length;i++) {
-            category.innerHTML += <option value="${category[i].id}">${category[i].name}</option>
+            category.innerHTML += `<option value="${categories[i].id}">${categories[i].name}</option>`
         }
     };
+    populateDropdown();
+
+    submitButton.addEventListener("click", function(event) {
+        fullUrl = "https://opentdb.com/api.php?amount="
+        buildUrl();
+        event.preventDefault();
+    })
 
     // TODO: Write a function to build the URL with query parameters based on form submitted
-    
+    function buildUrl() {
+        let baseUrl = "https://opentdb.com/api.php?amount=";
+            fullUrl += numQuestions.value;
+        if (category.value !== "any") {
+            fullUrl += "&category=" + category.value;
+        }
+            fullUrl += "&type=multiple";
+        if (difficulty.value !== "any") {
+            fullUrl += "&difficulty=" + difficulty.value;
+        }
+    }
 
     // TODO: Write a function to fetch new questions from trivia database
+    function fetchQuestions() {
+        fetch(fullUrl).then(function(response){
+            response.json().then(function(json){
+                questions = json.results
+            });
+        });
+    };
     
 
     // TODO: Write a function to shuffle correct and incorrect answers in an array for one question and return innerHTML
     
 
     // TODO: Write a function to display the questions (see sample-question-code.html)
-    
+    function displayQuestions() {
+        for (i=0;i<questions.length;i++) {
+            questionArea.innerHTML += `
+            <div class="q-container">
+            <p class="q-number">Question ${i+1}<span id="score0" class="score"></span></p>
+            <p class="q-question">${questions[i].question}</p>
+                <input id="q0-0" class="answer" name="q0" type="radio" value="Blue" />
+                <label for="q0-0" class="q-option">Blue</label>
+                <input id="q0-1" class="answer" name="q0" type="radio" value="Blue" />
+                <label for="q0-1" class="q-option">Burnt Sienna</label>
+                <input id="q0-2" class="answer" name="q0" type="radio" value="Blue" />
+                <label for="q0-2" class="q-option">Crimson</label>
+                <input id="q0-3" class="answer" name="q0" type="radio" value="Blue" />
+                <label for="q0-3" class="q-option">Chartreuse</label>
+            <p class="q-info">General Knowledge &nbsp;&bull;&nbsp; Easy</p>
+        </div>`
+        }
+    }
 
     // TODO: Write a function to reset the question area
     

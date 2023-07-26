@@ -1,0 +1,57 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Science & Nature",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the largest animal currently on Earth?",
+      "correct_answer": "Blue Whale",
+      "incorrect_answers": ["Orca", "Colossal Squid", "Giraffe"]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "How many colors are there in a rainbow?",
+      "correct_answer": "7",
+      "incorrect_answers": ["8", "9", "10"]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which band released songs suchs as &quot;Rio&quot;, &quot;Girls on Film&quot;, and &quot;The Reflex&quot;?",
+      "correct_answer": "Duran Duran",
+      "incorrect_answers": ["The Cure", "New Order", "Depeche Mode"]
+    },
+    {
+      "category": "Science: Computers",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What does LTS stand for in the software market?",
+      "correct_answer": "Long Term Support",
+      "incorrect_answers": [
+        "Long Taco Service",
+        "Ludicrous Transfer Speed",
+        "Ludicrous Turbo Speed"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the Polish city known to Germans as Danzig?",
+      "correct_answer": "Gda\u0144sk",
+      "incorrect_answers": ["Warsaw", "Zakopane", "Pozna\u0144"]
+    },
+    {
+      "category": "Entertainment: Books",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What was the first ever entry written for the SCP Foundation collaborative writing project?",
+      "correct_answer": "SCP-173",
+      "incorrect_answers": ["SCP-001", "SCP-999", "SCP-1459"]
+    }
+  ]
+}

@@ -27,12 +27,12 @@
 			<form id="form">
 				<div class="container row">
 					<div class="input-item">
-						<label class="request">Questions <input id="num-questions" type="number" name="num-questions" /></label>
+						<label class="request">Questions <input id="num-questions" type="number" name="num-questions" value="10" /></label>
 					</div>
 					<div class="input-item">
 						<label class="request">Category 
 							<select id="category" name="category">
-								<option value="any"></option>
+								<option value="any">All</option>
 								<!-- populate remainder using JS after fetching categories -->
 							</select>
 						</label>
@@ -40,9 +40,9 @@
 					<div class="input-item">
 						<label class="request">Type 
 							<select id="type" name="type">
-								<option value="any"></option>
+								<!-- <option value="any">Any</option> -->
 								<option value="multiple">Multiple Choice</option>
-								<option value="boolean">True or False</option>
+								<!-- <option value="boolean">True or False</option> -->
 							</select>
 						</label>
 					</div>
