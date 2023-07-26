@@ -71,6 +71,7 @@ function init() {
     populateDropdown();
 
     submitButton.addEventListener("click", function(event) {
+        resetQuestionArea();
         buildUrl();
         event.preventDefault();
     })
@@ -136,10 +137,11 @@ function init() {
         </div>`
         }
     }
-  
 
     // TODO: Write a function to reset the question area
-    
+   function resetQuestionArea() {
+    questionArea.innerHTML = ``;
+   } 
 
     // TODO: Write a form-level listener for submission
     
